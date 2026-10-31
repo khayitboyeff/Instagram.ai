@@ -64,11 +64,10 @@ insta-ai-studio/
 ### 1. Repository'ni yuklab olish
 
 ```bash
-git clone https://github.com/USERNAME/insta-ai-studio.git
-cd insta-ai-studio
+git clone https://github.com/khayitboyeff/Instagram.ai.git
+cd Instagram.ai
 ```
 
-`USERNAME` o‘rniga GitHub username'ingizni yozing.
 
 ### 2. Virtual environment yaratish
 
