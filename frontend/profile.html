@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="uz" data-theme="light">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#f4f2eb"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="Insta AI Studio"><link rel="manifest" href="/manifest.webmanifest"><link rel="apple-touch-icon" href="/static/icon-192.png">
+  <title>Profil · Insta AI Studio</title>
+  <link rel="icon" type="image/svg+xml" href="/static/brand.svg">
+  
+  <link rel="stylesheet" href="/static/style.css?v=20261031.3">
+<style id="no-sidebar-override">
+.sidebar, #sidebar {
+    display: none !important;
+}
+.main-area {
+    margin-left: 0 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+}
+.mobile-menu, #mobileMenu {
+    display: none !important;
+}
+</style>
+  <link rel="stylesheet" href="/static/mobile-final.css?v=20261101.1">
+</head>
+<body data-page="profile">
+<div class="app-shell">
+  
+
+  <main class="main-area">
+    <header class="topbar">
+      <div class="topbar-left"><button class="icon-button mobile-menu" id="mobileMenu" aria-label="Menu">☰</button><div><div class="eyebrow">INSTA AI STUDIO <span>/</span> <span data-i18n="personal">SHAXSIY</span></div><h1 data-i18n="profile_title">Profil</h1></div></div>
+      <div class="top-actions">
+        <button class="button button-status" id="openSystemStatus" type="button" title="Tizim holatini tekshirish" aria-label="Tizim holatini tekshirish"><span class="status-live-dot"></span><span data-i18n="system_status_short">Tizim holati</span></button>
+        <div class="language-switch" title="Language"><button data-lang="uz" class="lang-btn active">UZ</button><button data-lang="ru" class="lang-btn">RU</button><button data-lang="en" class="lang-btn">EN</button></div>
+        <button class="icon-button theme-toggle" id="themeToggle" title="Light / Dark">◐</button>
+        <div class="top-avatar">K</div>
+      </div>
+    </header>
+
+    <section class="page-content">
+      
+      <div class="page-intro"><div><span class="section-kicker">ACCOUNT SPACE</span><h2 data-i18n="profile_title">Profil boshqaruvi</h2><p data-i18n="profile_sub">Ulangan profil ma’lumotlari va o‘zgartirish uchun tayyor matnlar.</p></div></div>
+      <div class="profile-layout"><section class="panel account-panel"><div class="panel-title"><div class="panel-icon coral">◎</div><div><h3 data-i18n="connected_account">Instagram akkaunt</h3><p data-i18n="env_connection_info">Instagram .env faylidagi token orqali boshqariladi.</p></div></div><div id="profileDetails" class="profile-details"><div class="empty-state" data-i18n="checking">Tekshirilmoqda...</div></div></section>
+      <section class="panel edit-panel"><div class="panel-title"><div class="panel-icon gold">✎</div><div><h3 data-i18n="prepare_profile_edit">Profil matnini tayyorlash</h3><p data-i18n="profile_edit_hint">Yangi ma’lumotlarni kiriting va saqlang.</p></div></div><div class="field-group"><label for="newUsername" data-i18n="new_username">Yangi username</label><div class="input-prefix"><span>@</span><input id="newUsername" maxlength="30" placeholder="username"></div></div><div class="field-group"><label for="newBio" data-i18n="new_bio">Yangi bio</label><textarea id="newBio" rows="4" maxlength="150" placeholder="Instagram bio..."></textarea><div class="field-meta"><span data-i18n="bio_limit">150 belgigacha</span><span id="bioCount">0 / 150</span></div></div><button class="button button-primary button-wide" id="saveProfileDraft" data-i18n="save_profile_draft">Matnlarni tarixga saqlash</button><div class="profile-warning"><b>ⓘ</b><span data-i18n="profile_api_limit">Meta’ning rasmiy Instagram API’si username va bio’ni bevosita yangilashni qo‘llab-quvvatlamaydi. Matnlarni nusxalab, Instagram profil tahrirlash sahifasida o‘zing tasdiqlaysan.</span></div><div class="edit-links"><button class="button button-outline" id="copyUsername" data-i18n="copy_username">Username nusxalash</button><button class="button button-outline" id="copyBio" data-i18n="copy_bio">Bio nusxalash</button><a class="text-link" target="_blank" rel="noopener" href="https://www.instagram.com/accounts/edit/" data-i18n="open_instagram_edit">Instagram’da tahrirlash ↗</a></div><div class="progress-note" id="profileStatus"></div></section></div>
+      
+    </section>
+    <footer class="site-footer"><span>by khayitboyev</span><i>•</i><span>Insta AI Studio v1.1.0</span></footer>
+  </main>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<div class="modal-backdrop" id="systemModal" hidden>
+  <section class="system-modal" role="dialog" aria-modal="true" aria-labelledby="systemModalTitle">
+    <div class="system-modal-head"><div><span class="section-kicker">INSTA AI STUDIO</span><h2 id="systemModalTitle" data-i18n="system_status">Tizim holati</h2></div><button class="icon-button" id="closeSystemStatus" aria-label="Close">×</button></div>
+    <p class="system-modal-sub" data-i18n="system_status_hint">Ulanishlar avtomatik tekshiriladi. Instagram ma’lumotlari .env dan olinadi.</p>
+    <div class="system-check-list" id="systemCheckList"><div class="empty-state">Tekshirilmoqda…</div></div>
+    <div class="system-modal-foot"><span id="systemCheckedAt"></span><button class="button button-primary" id="refreshStatus" type="button">↻ <span data-i18n="refresh">Yangilash</span></button></div>
+  </section>
+</div>
+<script src="/api-config.js"></script><script src="/static/app.js?v=1.2.0"></script>
+</body></html>
+
+

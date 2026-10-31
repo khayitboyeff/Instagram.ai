@@ -1,0 +1,32 @@
+{
+  "name": "Insta AI Studio",
+  "short_name": "Insta Studio",
+  "description": "Personal Instagram Reels content workspace",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f4f2eb",
+  "theme_color": "#f4f2eb",
+  "icons": [
+    {
+      "src": "/static/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/static/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Reels tayyorlash",
+      "short_name": "Reels",
+      "url": "/reels"
+    }
+  ]
+}

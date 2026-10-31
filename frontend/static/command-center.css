@@ -1,0 +1,1325 @@
+/* DIAMOND COMMAND CENTER */
+
+.workspace-home {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.workspace-welcome {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.workspace-overline {
+    margin-bottom: 13px;
+    color: var(--accent-dark);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+}
+
+.workspace-welcome h2 {
+    margin: 0 0 9px;
+    font-size: clamp(27px, 3.5vw, 39px);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+}
+
+.workspace-welcome p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.workspace-edition {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 7px;
+    color: var(--muted);
+    font-size: 8px;
+    letter-spacing: 1.1px;
+    white-space: nowrap;
+}
+
+.workspace-edition strong {
+    color: var(--text-soft);
+    font-size: 12px;
+}
+
+/* Four actions arranged as a diamond */
+
+.launcher-grid {
+    position: relative;
+    display: block !important;
+
+    width: min(100%, 980px);
+    height: 545px;
+
+    margin: 0 auto 20px !important;
+    padding: 0 !important;
+
+    border: 0 !important;
+    background: transparent !important;
+}
+
+/* Quiet diamond outline in the centre */
+.launcher-grid::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: 225px;
+    height: 225px;
+
+    border: 1px solid var(--line-strong);
+    transform: translate(-50%, -50%) rotate(45deg);
+    opacity: .65;
+    pointer-events: none;
+}
+
+.launcher-grid::after {
+    content: "IAS";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: 68px;
+    height: 68px;
+
+    display: grid;
+    place-items: center;
+
+    color: var(--accent-dark);
+    background: var(--bg);
+    border: 1px solid var(--line-strong);
+
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.launcher-card {
+    position: absolute !important;
+
+    width: 270px;
+    min-height: 188px;
+    height: 188px;
+
+    display: flex !important;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 19px 21px !important;
+
+    color: var(--text) !important;
+    background: var(--surface) !important;
+
+    border: 1px solid var(--line-strong) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    opacity: 1;
+    transition:
+        transform .38s cubic-bezier(.2,.7,.2,1),
+        opacity .3s ease,
+        background .2s ease,
+        border-color .2s ease;
+
+    z-index: 2;
+}
+
+.launcher-feature {
+    top: 0;
+    left: 50%;
+    --base-x: -50%;
+    --base-y: 0%;
+    transform: translate(var(--base-x), var(--base-y));
+}
+
+.launcher-profile {
+    top: 50%;
+    right: 0;
+    --base-x: 0%;
+    --base-y: -50%;
+    transform: translate(var(--base-x), var(--base-y));
+}
+
+.launcher-analytics {
+    bottom: 0;
+    left: 50%;
+    --base-x: -50%;
+    --base-y: 0%;
+    transform: translate(var(--base-x), var(--base-y));
+}
+
+.launcher-history {
+    top: 50%;
+    left: 0;
+    --base-x: 0%;
+    --base-y: -50%;
+    transform: translate(var(--base-x), var(--base-y));
+}
+
+.launcher-card:hover {
+    border-color: var(--accent) !important;
+    box-shadow: none !important;
+}
+
+.launcher-card-top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.launcher-index {
+    color: var(--muted);
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.launcher-arrow {
+    color: var(--muted);
+    font-size: 18px;
+    transition: transform .2s ease;
+}
+
+.launcher-card:hover .launcher-arrow {
+    transform: translate(3px,-3px);
+}
+
+.launcher-icon {
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+    place-items: center;
+
+    margin: 14px 0 8px;
+
+    color: var(--accent-dark);
+    background: transparent !important;
+    border: 0 !important;
+
+    font-size: 31px;
+}
+
+.launcher-icon svg {
+    width: 37px;
+    height: 37px;
+}
+
+.launcher-card h3 {
+    margin: 0 0 6px;
+    color: var(--text) !important;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: -.5px;
+}
+
+.launcher-card p {
+    margin: 0;
+    max-width: 230px;
+
+    color: var(--muted);
+    font-size: 9px;
+    line-height: 1.55;
+}
+
+.launcher-card-bottom {
+    width: 100%;
+    margin-top: auto;
+    padding-top: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: var(--accent-dark);
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.launcher-card-bottom span:last-child {
+    font-size: 15px;
+}
+
+/* Feature and profile colour */
+
+.launcher-feature {
+    background: #364B39 !important;
+    border-color: #364B39 !important;
+}
+
+.launcher-feature h3,
+.launcher-feature .launcher-icon,
+.launcher-feature .launcher-card-bottom {
+    color: #F3F5EF !important;
+}
+
+.launcher-feature p,
+.launcher-feature .launcher-index,
+.launcher-feature .launcher-arrow {
+    color: #C4D0C0 !important;
+}
+
+.launcher-profile {
+    background: #E8EDE4 !important;
+    border-color: #D7E0D1 !important;
+}
+
+.launcher-profile h3 {
+    color: #344434 !important;
+}
+
+.launcher-profile p,
+.launcher-profile .launcher-index,
+.launcher-profile .launcher-arrow {
+    color: #72806D !important;
+}
+
+.launcher-profile .launcher-card-bottom,
+.launcher-profile .launcher-icon {
+    color: #52694D !important;
+}
+
+/* Selected card flies towards nearest screen edge */
+
+.launcher-card.is-opening {
+    transform:
+        translate(var(--base-x), var(--base-y))
+        translate(var(--fly-x), var(--fly-y))
+        scale(.76) !important;
+
+    opacity: 0 !important;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.launcher-card.is-dimmed {
+    opacity: .12 !important;
+    transform:
+        translate(var(--base-x), var(--base-y))
+        scale(.92);
+    pointer-events: none;
+}
+
+/* Account strip */
+
+.account-strip {
+    display: grid;
+    grid-template-columns: 180px minmax(0,1fr) auto;
+    align-items: center;
+    gap: 20px;
+
+    width: min(100%, 980px);
+    margin: 0 auto;
+
+    padding: 17px 0;
+
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.account-strip-heading h3 {
+    margin: 6px 0 0;
+    font-size: 12px;
+}
+
+.account-live {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.account-live strong {
+    font-size: 11px;
+}
+
+.account-live p {
+    margin: 4px 0 0;
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.account-strip-link {
+    color: var(--accent-dark) !important;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+/* Inner workspace back link */
+
+.workspace-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-right: 13px;
+    padding-right: 15px;
+
+    color: var(--text-soft) !important;
+    border-right: 1px solid var(--line);
+
+    font-size: 10px;
+    font-weight: 750;
+    white-space: nowrap;
+}
+
+.workspace-back-icon {
+    font-size: 19px;
+    color: var(--accent-dark);
+}
+
+.workspace-logout {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    margin-left: 5px;
+    padding: 8px 9px;
+
+    color: var(--muted) !important;
+    background: transparent;
+    border: 1px solid var(--line);
+
+    font-size: 9px;
+    white-space: nowrap;
+}
+
+/* Central four-dot diamond loader */
+
+.studio-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--bg);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: opacity .25s ease, visibility .25s ease;
+}
+
+.studio-loader.is-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}
+
+.studio-loader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 17px;
+}
+
+.studio-diamond-loader {
+    position: relative;
+
+    width: 64px;
+    height: 64px;
+
+    animation: diamond-rotate 1.15s linear infinite;
+}
+
+.studio-diamond-loader span {
+    position: absolute;
+
+    width: 10px;
+    height: 10px;
+
+    background: #52694D;
+    border-radius: 1px;
+
+    transform: rotate(45deg);
+}
+
+.studio-diamond-loader span:nth-child(1) {
+    top: 0;
+    left: 27px;
+}
+
+.studio-diamond-loader span:nth-child(2) {
+    top: 27px;
+    right: 0;
+    background: #829378;
+}
+
+.studio-diamond-loader span:nth-child(3) {
+    bottom: 0;
+    left: 27px;
+    background: #A3B297;
+}
+
+.studio-diamond-loader span:nth-child(4) {
+    top: 27px;
+    left: 0;
+    background: #687E62;
+}
+
+@keyframes diamond-rotate {
+    to { transform: rotate(405deg); }
+}
+
+.studio-loader-title {
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .4px;
+}
+
+.studio-loader-message {
+    color: var(--muted);
+    font-size: 10px;
+}
+
+/* Initial page appearance */
+
+.workspace-enter .main-area {
+    animation: workspace-appear .38s ease both;
+}
+
+@keyframes workspace-appear {
+    from { opacity: 0; transform: translateY(9px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.page-is-leaving .main-area {
+    opacity: 0;
+    transform: translateX(-18px);
+    transition: opacity .22s ease, transform .22s ease;
+}
+
+/* Dark mode */
+
+html[data-theme="dark"] .launcher-card {
+    background: var(--surface) !important;
+    border-color: var(--line) !important;
+}
+
+html[data-theme="dark"] .launcher-card h3 {
+    color: var(--text) !important;
+}
+
+html[data-theme="dark"] .launcher-feature {
+    background: #344639 !important;
+    border-color: #344639 !important;
+}
+
+html[data-theme="dark"] .launcher-feature h3,
+html[data-theme="dark"] .launcher-feature .launcher-icon,
+html[data-theme="dark"] .launcher-feature .launcher-card-bottom {
+    color: #F3F5EF !important;
+}
+
+html[data-theme="dark"] .launcher-profile {
+    background: #303C31 !important;
+    border-color: #3A4939 !important;
+}
+
+html[data-theme="dark"] .launcher-profile h3 {
+    color: #EDF2E8 !important;
+}
+
+html[data-theme="dark"] .studio-loader {
+    background: var(--bg);
+}
+
+/* Responsive diamond */
+
+@media (max-width: 850px) {
+    .launcher-grid {
+        width: 100%;
+        height: 510px;
+    }
+
+    .launcher-card {
+        width: 245px;
+        height: 180px;
+        min-height: 180px;
+        padding: 16px;
+    }
+
+    .launcher-grid::before {
+        width: 180px;
+        height: 180px;
+    }
+
+    .launcher-grid::after {
+        width: 55px;
+        height: 55px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 650px) {
+    .workspace-home {
+        padding-top: 28px;
+    }
+
+    .workspace-welcome {
+        display: block;
+        margin-bottom: 23px;
+    }
+
+    .workspace-welcome h2 {
+        font-size: 29px;
+    }
+
+    .workspace-edition {
+        align-items: flex-start;
+        flex-direction: row;
+        gap: 12px;
+        margin-top: 13px;
+    }
+
+    .launcher-grid {
+        height: auto;
+        display: grid !important;
+        grid-template-columns: 1fr;
+        gap: 0;
+        border-top: 1px solid var(--line) !important;
+        border-left: 1px solid var(--line) !important;
+    }
+
+    .launcher-grid::before,
+    .launcher-grid::after {
+        display: none;
+    }
+
+    .launcher-card {
+        position: relative !important;
+        inset: auto !important;
+
+        width: 100%;
+        height: auto;
+        min-height: 180px;
+
+        transform: none !important;
+        padding: 19px !important;
+    }
+
+    .launcher-card.is-opening {
+        transform: translate(var(--fly-x), var(--fly-y)) scale(.8) !important;
+    }
+
+    .launcher-card.is-dimmed {
+        transform: scale(.96) !important;
+    }
+
+    .account-strip {
+        grid-template-columns: 1fr;
+        gap: 13px;
+        padding: 16px 0;
+    }
+
+    .workspace-back {
+        margin-right: 6px;
+        padding-right: 7px;
+        font-size: 0;
+    }
+
+    .workspace-back-icon {
+        font-size: 21px;
+    }
+
+    .workspace-logout {
+        padding: 7px;
+        font-size: 0;
+    }
+
+    .workspace-logout span:first-child {
+        font-size: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .studio-diamond-loader {
+        animation-duration: 3s;
+    }
+
+    .launcher-card,
+    .main-area {
+        transition-duration: .01ms !important;
+    }
+}
+
+/* CENTERED COMPACT DIAMOND BUTTONS */
+
+.launcher-grid {
+    position: relative !important;
+    width: 520px !important;
+    max-width: 100% !important;
+    height: 520px !important;
+    margin: 5px auto 15px !important;
+    display: block !important;
+    border: 0 !important;
+}
+
+.launcher-grid::before {
+    width: 125px !important;
+    height: 125px !important;
+    border-color: var(--line-strong) !important;
+}
+
+.launcher-grid::after {
+    width: 52px !important;
+    height: 52px !important;
+    font-size: 11px !important;
+}
+
+.launcher-card {
+    position: absolute !important;
+    width: 160px !important;
+    height: 160px !important;
+    min-height: 160px !important;
+    padding: 15px 13px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+
+    clip-path: polygon(
+        50% 0%,
+        100% 50%,
+        50% 100%,
+        0% 50%
+    );
+
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    overflow: hidden;
+}
+
+.launcher-feature {
+    top: 0 !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: translateX(-50%) !important;
+}
+
+.launcher-profile {
+    top: 50% !important;
+    right: 0 !important;
+    left: auto !important;
+    bottom: auto !important;
+    transform: translateY(-50%) !important;
+}
+
+.launcher-analytics {
+    bottom: 0 !important;
+    left: 50% !important;
+    top: auto !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+}
+
+.launcher-history {
+    top: 50% !important;
+    left: 0 !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: translateY(-50%) !important;
+}
+
+.launcher-card-top {
+    width: 105px !important;
+    justify-content: center !important;
+    margin-bottom: 4px;
+}
+
+.launcher-index {
+    font-size: 7px !important;
+    letter-spacing: .7px !important;
+}
+
+.launcher-arrow {
+    display: none !important;
+}
+
+.launcher-icon {
+    width: 30px !important;
+    height: 30px !important;
+    margin: 3px 0 5px !important;
+    font-size: 23px !important;
+}
+
+.launcher-icon svg {
+    width: 27px !important;
+    height: 27px !important;
+}
+
+.launcher-card h3 {
+    max-width: 112px;
+    margin: 0 0 5px !important;
+    font-size: 12px !important;
+    line-height: 1.25;
+    letter-spacing: -.2px !important;
+}
+
+.launcher-card p {
+    max-width: 108px;
+    font-size: 7.5px !important;
+    line-height: 1.4 !important;
+}
+
+.launcher-card-bottom {
+    width: 100px !important;
+    justify-content: center !important;
+    gap: 5px;
+    margin-top: 5px !important;
+    padding-top: 3px !important;
+    font-size: 7px !important;
+}
+
+.launcher-card-bottom span:last-child {
+    font-size: 10px !important;
+}
+
+.launcher-card:hover {
+    filter: brightness(.96);
+}
+
+.launcher-card.is-opening {
+    transform:
+        translate(var(--fly-x), var(--fly-y))
+        scale(.7) !important;
+    opacity: 0 !important;
+}
+
+/* Mobile: centered diamond layout */
+
+@media (max-width: 650px) {
+    .launcher-grid {
+        width: 100% !important;
+        max-width: 390px !important;
+        height: 390px !important;
+
+        display: block !important;
+        margin: 0 auto 18px !important;
+
+        border: 0 !important;
+    }
+
+    .launcher-grid::before {
+        width: 95px !important;
+        height: 95px !important;
+    }
+
+    .launcher-grid::after {
+        width: 38px !important;
+        height: 38px !important;
+        font-size: 9px !important;
+    }
+
+    .launcher-card {
+        width: 120px !important;
+        height: 120px !important;
+        min-height: 120px !important;
+        padding: 10px 7px !important;
+    }
+
+    .launcher-feature {
+        top: 0 !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+
+    .launcher-profile {
+        top: 50% !important;
+        right: 0 !important;
+        left: auto !important;
+        transform: translateY(-50%) !important;
+    }
+
+    .launcher-analytics {
+        bottom: 0 !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+
+    .launcher-history {
+        top: 50% !important;
+        left: 0 !important;
+        transform: translateY(-50%) !important;
+    }
+
+    .launcher-card-top {
+        width: 85px !important;
+    }
+
+    .launcher-index {
+        font-size: 6px !important;
+    }
+
+    .launcher-icon {
+        width: 24px !important;
+        height: 24px !important;
+        margin: 2px 0 3px !important;
+        font-size: 19px !important;
+    }
+
+    .launcher-icon svg {
+        width: 22px !important;
+        height: 22px !important;
+    }
+
+    .launcher-card h3 {
+        max-width: 84px;
+        font-size: 9px !important;
+    }
+
+    .launcher-card p {
+        max-width: 82px;
+        font-size: 6px !important;
+    }
+
+    .launcher-card-bottom {
+        width: 80px !important;
+        font-size: 6px !important;
+    }
+
+    .account-strip {
+        margin-top: 12px;
+    }
+}
+
+
+
+/* =========================================
+   DASHBOARD — COMPACT CENTERED DIAMONDS
+========================================= */
+
+.launcher-grid {
+    position: relative !important;
+    display: block !important;
+    width: 320px !important;
+    height: 320px !important;
+    max-width: 90vw !important;
+    margin: 0 auto 24px !important;
+    padding: 0 !important;
+    border: 0 !important;
+}
+
+/* Markazdagi eski AI dekoratsiyasini olib tashlash */
+.launcher-grid::before,
+.launcher-grid::after {
+    display: none !important;
+    content: none !important;
+}
+
+.launcher-grid .launcher-card {
+    --card-anchor: translate(0, 0);
+
+    position: absolute !important;
+    width: 118px !important;
+    height: 118px !important;
+    min-height: 118px !important;
+    min-width: 118px !important;
+
+    display: grid !important;
+    place-items: center !important;
+
+    padding: 12px !important;
+    overflow: hidden !important;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%) !important;
+
+    border: 1px solid rgba(255,255,255,.85) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    transform: var(--card-anchor) !important;
+    transition:
+        transform .35s cubic-bezier(.2,.7,.2,1),
+        filter .25s ease,
+        opacity .3s ease !important;
+
+    text-decoration: none !important;
+}
+
+.launcher-grid .launcher-feature {
+    top: 0 !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    --card-anchor: translateX(-50%);
+    background: linear-gradient(145deg, #F3F8F0, #D9E8D4) !important;
+}
+
+.launcher-grid .launcher-profile {
+    top: 50% !important;
+    right: 0 !important;
+    bottom: auto !important;
+    left: auto !important;
+    --card-anchor: translateY(-50%);
+    background: linear-gradient(145deg, #F2F6F7, #DCE7E9) !important;
+}
+
+.launcher-grid .launcher-analytics {
+    bottom: 0 !important;
+    left: 50% !important;
+    top: auto !important;
+    right: auto !important;
+    --card-anchor: translateX(-50%);
+    background: linear-gradient(145deg, #F8F6EF, #EAE4D6) !important;
+}
+
+.launcher-grid .launcher-history {
+    top: 50% !important;
+    left: 0 !important;
+    right: auto !important;
+    bottom: auto !important;
+    --card-anchor: translateY(-50%);
+    background: linear-gradient(145deg, #F0F6F2, #D9E8DF) !important;
+}
+
+/* Romblar ichida faqat bo'lim nomi */
+.launcher-grid .launcher-card h3 {
+    display: block !important;
+    width: 88px !important;
+    max-width: 88px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: #354638 !important;
+    font-size: 12px !important;
+    line-height: 1.35 !important;
+    font-weight: 750 !important;
+    letter-spacing: -.2px !important;
+    text-align: center !important;
+    overflow-wrap: anywhere !important;
+}
+
+/* Hover */
+.launcher-grid .launcher-card:hover {
+    z-index: 5 !important;
+    transform: var(--card-anchor) scale(1.045) !important;
+    filter: drop-shadow(0 10px 15px rgba(54, 80, 55, .16));
+}
+
+/* Bo'limga o'tish animatsiyasi — joyidan sakramaydi */
+.launcher-grid .launcher-card.is-opening {
+    transform:
+        var(--card-anchor)
+        translate(var(--fly-x, 0px), var(--fly-y, 0px))
+        scale(.72) !important;
+    opacity: 0 !important;
+}
+
+/* Dark mode */
+html[data-theme="dark"] .launcher-grid .launcher-feature {
+    background: linear-gradient(145deg, #435D48, #2D4132) !important;
+}
+
+html[data-theme="dark"] .launcher-grid .launcher-profile {
+    background: linear-gradient(145deg, #40564F, #293E39) !important;
+}
+
+html[data-theme="dark"] .launcher-grid .launcher-analytics {
+    background: linear-gradient(145deg, #555441, #3B3C30) !important;
+}
+
+html[data-theme="dark"] .launcher-grid .launcher-history {
+    background: linear-gradient(145deg, #3C594C, #293F36) !important;
+}
+
+html[data-theme="dark"] .launcher-grid .launcher-card h3 {
+    color: #F1F5EE !important;
+}
+
+html[data-theme="dark"] .launcher-grid .launcher-card {
+    border-color: rgba(255,255,255,.12) !important;
+}
+
+/* UZ / RU / EN tugmalarini ixchamlashtirish */
+.language-switch {
+    display: flex !important;
+    align-items: center !important;
+    gap: 2px !important;
+    padding: 2px !important;
+    min-height: 0 !important;
+    border-radius: 8px !important;
+}
+
+.language-switch .lang-btn {
+    width: 26px !important;
+    min-width: 26px !important;
+    height: 26px !important;
+    min-height: 26px !important;
+    padding: 0 !important;
+    font-size: 9px !important;
+    line-height: 1 !important;
+    border-radius: 6px !important;
+}
+
+/* Yuqori panel tugmalari */
+.top-actions {
+    gap: 7px !important;
+}
+
+.top-actions .button-status {
+    min-height: 29px !important;
+    height: 29px !important;
+    padding: 0 9px !important;
+    font-size: 9px !important;
+}
+
+.top-actions .icon-button {
+    width: 30px !important;
+    height: 30px !important;
+}
+
+/* Telefon ekranlari */
+@media (max-width: 650px) {
+    .launcher-grid {
+        width: min(286px, 88vw) !important;
+        height: min(286px, 88vw) !important;
+        margin: 0 auto 18px !important;
+    }
+
+    .launcher-grid .launcher-card {
+        width: 106px !important;
+        height: 106px !important;
+        min-width: 106px !important;
+        min-height: 106px !important;
+        padding: 9px !important;
+    }
+
+    .launcher-grid .launcher-card h3 {
+        width: 79px !important;
+        max-width: 79px !important;
+        font-size: 10px !important;
+    }
+
+    .language-switch .lang-btn {
+        width: 24px !important;
+        min-width: 24px !important;
+        height: 24px !important;
+        min-height: 24px !important;
+        font-size: 8px !important;
+    }
+}
+/* ==========================================
+   INSTA AI STUDIO — COMPACT DIAMOND MENU
+========================================== */
+
+.launcher-grid {
+    position: relative !important;
+    display: block !important;
+    width: 224px !important;
+    height: 224px !important;
+    max-width: 90vw !important;
+    margin: 0 auto 24px !important;
+    padding: 0 !important;
+    border: 0 !important;
+}
+
+/* Markazdagi AI dekoratsiyasini yashirish */
+.launcher-grid::before,
+.launcher-grid::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* 4 ta romb */
+.launcher-grid .launcher-card {
+    position: absolute !important;
+    width: 108px !important;
+    height: 108px !important;
+    min-width: 108px !important;
+    min-height: 108px !important;
+
+    display: grid !important;
+    place-items: center !important;
+
+    padding: 10px !important;
+    overflow: hidden !important;
+
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%) !important;
+    border: 1px solid rgba(255,255,255,.8) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    transition:
+        transform .3s ease,
+        filter .3s ease,
+        opacity .3s ease !important;
+    text-decoration: none !important;
+}
+
+/* Reels */
+.launcher-grid .launcher-feature {
+    top: 0 !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: translateX(-50%) !important;
+
+    background: linear-gradient(145deg, #F0F7EC, #C8DEC2) !important;
+}
+
+/* Akkaunt */
+.launcher-grid .launcher-profile {
+    top: 50% !important;
+    right: 0 !important;
+    bottom: auto !important;
+    left: auto !important;
+    transform: translateY(-50%) !important;
+
+    background: linear-gradient(145deg, #EDF5F6, #C8DDE0) !important;
+}
+
+/* Statistika */
+.launcher-grid .launcher-analytics {
+    bottom: 0 !important;
+    left: 50% !important;
+    top: auto !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+
+    background: linear-gradient(145deg, #F7F3E9, #E5D9BD) !important;
+}
+
+/* Kontent tarixi */
+.launcher-grid .launcher-history {
+    top: 50% !important;
+    left: 0 !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: translateY(-50%) !important;
+
+    background: linear-gradient(145deg, #EAF4ED, #C6DECF) !important;
+}
+
+/* Romb ichida faqat bo'lim nomi qolsin */
+.launcher-grid .launcher-card > :not(h3) {
+    display: none !important;
+}
+
+.launcher-grid .launcher-card h3 {
+    display: block !important;
+    width: 84px !important;
+    max-width: 84px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: #344A39 !important;
+    font-size: 11px !important;
+    line-height: 1.35 !important;
+    font-weight: 750 !important;
+    letter-spacing: -.2px !important;
+    text-align: center !important;
+    overflow-wrap: anywhere !important;
+}
+
+/* Hover */
+.launcher-grid .launcher-card:hover {
+    z-index: 5 !important;
+    filter: brightness(1.045) drop-shadow(0 5px 9px rgba(50,75,50,.15));
+}
+
+/* Ochilish animatsiyasi */
+.launcher-grid .launcher-card.is-opening {
+    opacity: 0 !important;
+    transform: translate(var(--fly-x, 0px), var(--fly-y, 0px)) scale(.72) !important;
+}
+
+/* Dark mode */
+html[data-theme="dark"] .launcher-grid .launcher-feature {
+    background: linear-gradient(145deg, #49644D, #2D4232) !important;
+}
+
+html[data-theme="dark"] .launcher-grid .launcher-profile {
+    background: linear-gradient(145deg, #405E5B, #293F3D) !important;
+}
+
+html[data-theme="dark"] .launcher-grid .launcher-analytics {
+    background: linear-gradient(145deg, #5B5945, #3D3D31) !important;
+}
+
+html[data-theme="dark"] .launcher-grid .launcher-history {
+    background: linear-gradient(145deg, #41604E, #2A4035) !important;
+}
+
+html[data-theme="dark"] .launcher-grid .launcher-card h3 {
+    color: #F2F5EE !important;
+}
+
+html[data-theme="dark"] .launcher-grid .launcher-card {
+    border-color: rgba(255,255,255,.14) !important;
+}
+
+/* UZ / RU / EN — ixcham */
+.language-switch {
+    display: flex !important;
+    align-items: center !important;
+    gap: 2px !important;
+    padding: 2px !important;
+}
+
+.language-switch .lang-btn {
+    width: 25px !important;
+    min-width: 25px !important;
+    height: 25px !important;
+    min-height: 25px !important;
+    padding: 0 !important;
+    font-size: 9px !important;
+    border-radius: 5px !important;
+}
+
+/* Yuqori panel */
+.top-actions {
+    gap: 6px !important;
+}
+
+.top-actions .button-status {
+    min-height: 28px !important;
+    height: 28px !important;
+    padding: 0 8px !important;
+    font-size: 9px !important;
+}
+
+/* Telefon */
+@media (max-width: 650px) {
+    .launcher-grid {
+        width: 204px !important;
+        height: 204px !important;
+    }
+
+    .launcher-grid .launcher-card {
+        width: 98px !important;
+        height: 98px !important;
+        min-width: 98px !important;
+        min-height: 98px !important;
+    }
+
+    .launcher-grid .launcher-card h3 {
+        width: 76px !important;
+        max-width: 76px !important;
+        font-size: 10px !important;
+    }
+}

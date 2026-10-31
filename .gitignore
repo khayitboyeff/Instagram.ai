@@ -1,0 +1,37 @@
+﻿.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+node_modules/
+dist/
+build/
+
+.env
+.env.*
+!.env.example
+
+*.db
+*.sqlite
+*.sqlite3
+
+storage/
+uploads/
+*.log
+
+.DS_Store
+Thumbs.db
+
+# Eski dizayn nusxalari
+frontend/design-backup/
+frontend/_backup*/
+frontend/*backup*
+frontend/static/*backup*
+frontend/static/*.before-redesign.css
+frontend/design-audit.txt
+
+# Qo'shimcha vaqtinchalik fayllar
+*.tmp
+*.bak

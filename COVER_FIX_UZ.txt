@@ -1,0 +1,16 @@
+INSTA AI STUDIO — COVER XATOSI TUZATILDI
+
+Sabab:
+GEMINI_IMAGE_MODEL qiymatiga SESSION_SECRET sozlamasi tasodifan qo‘shilib qolgan.
+
+Tuzatish:
+- Backend ishga tushganda .env ichida shu ikki qiymat bir qatorda birikib qolgan bo‘lsa, ularni alohida qatorlarga ajratadi.
+- Model nomi noto‘g‘ri birikmadan himoyalangan.
+- Rasm javobi JPEG formatida olinadi va .jpg sifatida saqlanadi.
+- Model: gemini-nano-banana-2.1 (Google Gemini API model nomi).
+
+MUHIM XAVFSIZLIK:
+SESSION_SECRET qiymatini chatga yuborganingiz sababli, uni yangi uzun va tasodifiy qiymatga almashtiring.
+.env faylini hech kimga yubormang va ommaviy GitHub repozitoriyasiga joylamang.
+
+Eslatma: haqiqiy cover yaratish Gemini API kaliti, modelga ruxsat va internetga bog‘liq. Bu arxivdagi kod tuzatildi, lekin sizning API kalitingiz bilan jonli test bajarilmadi.

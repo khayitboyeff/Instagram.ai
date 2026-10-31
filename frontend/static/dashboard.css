@@ -1,0 +1,319 @@
+/* Insta AI Studio — dashboard-only visual layer. All rules are scoped to dashboard. */
+body[data-page="dashboard"] {
+  --dash-ink: #26342c;
+  --dash-muted: #78847b;
+  --dash-line: #e4e9e3;
+  --dash-bg: #f5f7f3;
+  --dash-surface: #ffffff;
+  background:
+    radial-gradient(ellipse at 50% 38%, rgba(208,224,207,.26), transparent 48%),
+    var(--bg);
+}
+html[data-theme="dark"] body[data-page="dashboard"] {
+  --dash-ink: #edf3eb;
+  --dash-muted: #a8b5aa;
+  --dash-line: #37453a;
+  --dash-bg: #202a22;
+  --dash-surface: #263229;
+  background:
+    radial-gradient(ellipse at 50% 38%, rgba(91,125,94,.15), transparent 50%),
+    var(--bg);
+}
+
+/* Header: dashboard title is text, not a giant pill/button. */
+body[data-page="dashboard"] .topbar {
+  min-height: 76px;
+  height: 76px;
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  border-bottom-color: var(--dash-line);
+}
+body[data-page="dashboard"] .topbar h1 {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  margin-top: 3px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--text);
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -.55px;
+}
+body[data-page="dashboard"] .language-switch {
+  padding: 3px;
+  gap: 2px;
+  border-radius: 10px;
+  background: var(--surface-2);
+}
+body[data-page="dashboard"] .lang-btn {
+  min-width: 29px;
+  min-height: 27px;
+  padding: 5px 7px;
+  border-radius: 7px;
+  font-size: 9px;
+}
+body[data-page="dashboard"] .lang-btn.active {
+  background: var(--surface);
+  box-shadow: 0 1px 4px rgba(20,35,22,.08);
+}
+body[data-page="dashboard"] .button-status {
+  min-height: 31px;
+  padding: 7px 10px;
+  border-radius: 9px;
+  font-size: 10px;
+}
+body[data-page="dashboard"] .theme-toggle { border-radius: 9px; }
+
+body[data-page="dashboard"] .page-content {
+  max-width: 1240px;
+  padding-top: clamp(28px, 5vh, 54px);
+}
+body[data-page="dashboard"] .welcome-row {
+  align-items: center;
+  margin-bottom: 18px;
+}
+body[data-page="dashboard"] .welcome-row h2 {
+  margin: 8px 0 6px;
+  font-size: clamp(23px, 3vw, 31px);
+  letter-spacing: -1.1px;
+}
+body[data-page="dashboard"] .welcome-row p {
+  max-width: 520px;
+  line-height: 1.65;
+}
+body[data-page="dashboard"] .welcome-row > .button {
+  min-height: 38px;
+  padding: 9px 13px;
+  border-radius: 10px;
+}
+
+/* Four focused actions — no extra labels, icons or descriptions inside tiles. */
+body[data-page="dashboard"] .dashboard-actions {
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 470px);
+  height: 354px;
+  margin: 6px auto 24px;
+  display: block;
+}
+body[data-page="dashboard"] .dashboard-actions::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 180px;
+  height: 180px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  border: 1px solid color-mix(in srgb, var(--accent) 15%, transparent);
+  border-radius: 50%;
+  opacity: .65;
+}
+body[data-page="dashboard"] .diamond-action {
+  --diamond-x: -50%;
+  --diamond-y: 0%;
+  position: absolute;
+  width: 146px;
+  height: 146px;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  color: #26382c;
+  text-align: center;
+  text-decoration: none;
+  border: 0;
+  filter: drop-shadow(0 9px 13px rgba(40,60,43,.08));
+  transform: translate(var(--diamond-x), var(--diamond-y));
+  transition: filter .25s ease, scale .25s ease;
+  animation: diamond-drift 10s ease-in-out infinite alternate;
+  -webkit-tap-highlight-color: transparent;
+}
+body[data-page="dashboard"] .diamond-action::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--diamond-fill);
+  border: 1px solid rgba(255,255,255,.8);
+}
+body[data-page="dashboard"] .diamond-action span {
+  display: block;
+  max-width: 100px;
+  font-size: 13px;
+  line-height: 1.35;
+  font-weight: 800;
+  letter-spacing: -.35px;
+}
+body[data-page="dashboard"] .diamond-action:hover,
+body[data-page="dashboard"] .diamond-action:focus-visible {
+  z-index: 3;
+  scale: 1.055;
+  filter: drop-shadow(0 13px 18px rgba(40,60,43,.17));
+  outline: none;
+}
+body[data-page="dashboard"] .diamond-action:focus-visible::before {
+  outline: 2px solid var(--accent);
+  outline-offset: -12px;
+}
+body[data-page="dashboard"] .diamond-reels {
+  --diamond-fill: linear-gradient(145deg,#f2faef 0%,#d1e7ca 55%,#bdd8b7 100%);
+  left: 50%; top: 0;
+  animation-delay: -1s;
+}
+body[data-page="dashboard"] .diamond-profile {
+  --diamond-fill: linear-gradient(145deg,#f0f8fa 0%,#d2e8eb 55%,#bad9dd 100%);
+  right: 0; top: 50%;
+  --diamond-x: 0%; --diamond-y: -50%;
+  animation-delay: -3.5s;
+}
+body[data-page="dashboard"] .diamond-analytics {
+  --diamond-fill: linear-gradient(145deg,#fbf7ec 0%,#eee4c9 55%,#e3d5b1 100%);
+  left: 50%; bottom: 0;
+  animation-delay: -6s;
+}
+body[data-page="dashboard"] .diamond-history {
+  --diamond-fill: linear-gradient(145deg,#f1f8f3 0%,#d4e9dc 55%,#bfddcc 100%);
+  left: 0; top: 50%;
+  --diamond-x: 0%; --diamond-y: -50%;
+  animation-delay: -8s;
+}
+@keyframes diamond-drift {
+  from { margin-top: -2px; filter: drop-shadow(0 7px 11px rgba(40,60,43,.07)); }
+  to { margin-top: 2px; filter: drop-shadow(0 11px 15px rgba(40,60,43,.12)); }
+}
+html[data-theme="dark"] body[data-page="dashboard"] .diamond-action { color: #24332a; }
+html[data-theme="dark"] body[data-page="dashboard"] .diamond-reels { --diamond-fill: linear-gradient(145deg,#c9e2c5,#8eb895 70%,#739d7d); }
+html[data-theme="dark"] body[data-page="dashboard"] .diamond-profile { --diamond-fill: linear-gradient(145deg,#c9e0e2,#8eb8bb 70%,#709da0); }
+html[data-theme="dark"] body[data-page="dashboard"] .diamond-analytics { --diamond-fill: linear-gradient(145deg,#e9dfc3,#c7b98e 70%,#ad9c6e); }
+html[data-theme="dark"] body[data-page="dashboard"] .diamond-history { --diamond-fill: linear-gradient(145deg,#c9dfd0,#8eb8a0 70%,#709c82); }
+
+/* Dashboard account summary remains separate from the main actions. */
+body[data-page="dashboard"] .profile-summary {
+  border-radius: 15px;
+  background: color-mix(in srgb, var(--surface) 94%, var(--accent-soft));
+  border-color: var(--dash-line);
+}
+body[data-page="dashboard"] .site-footer { border-top: 1px solid var(--dash-line); }
+
+@media (max-width: 760px) {
+  body[data-page="dashboard"] .topbar { height: 66px; min-height: 66px; padding-inline: 12px; }
+  body[data-page="dashboard"] .topbar-left { min-width: 0; }
+  body[data-page="dashboard"] .topbar h1 { font-size: 15px; }
+  body[data-page="dashboard"] .eyebrow { font-size: 7px; letter-spacing: .9px; }
+  body[data-page="dashboard"] .top-actions { gap: 5px; }
+  body[data-page="dashboard"] .button-status { width: 32px; height: 32px; min-height: 32px; padding: 0; font-size: 0; justify-content: center; }
+  body[data-page="dashboard"] .button-status .status-live-dot { margin: 0; }
+  body[data-page="dashboard"] .lang-btn { min-width: 25px; min-height: 25px; padding: 4px 5px; font-size: 8px; }
+  body[data-page="dashboard"] .theme-toggle { width: 31px; height: 31px; }
+  body[data-page="dashboard"] .page-content { padding: 22px 13px calc(94px + env(safe-area-inset-bottom)); }
+  body[data-page="dashboard"] .welcome-row { gap: 12px; }
+  body[data-page="dashboard"] .welcome-row h2 { font-size: 23px; }
+  body[data-page="dashboard"] .welcome-row p { font-size: 11px; }
+  body[data-page="dashboard"] .welcome-row > .button { min-height: 35px; }
+  body[data-page="dashboard"] .dashboard-actions { width: 286px; max-width: 88vw; height: 286px; margin: 12px auto 20px; }
+  body[data-page="dashboard"] .diamond-action { width: 118px; height: 118px; padding: 14px; }
+  body[data-page="dashboard"] .diamond-action span { max-width: 82px; font-size: 11px; }
+  body[data-page="dashboard"] .dashboard-actions::before { width: 130px; height: 130px; }
+  body[data-page="dashboard"] .profile-summary { gap: 10px; }
+}
+@media (max-width: 370px) {
+  body[data-page="dashboard"] .dashboard-actions { width: 254px; height: 254px; }
+  body[data-page="dashboard"] .diamond-action { width: 106px; height: 106px; }
+  body[data-page="dashboard"] .diamond-action span { max-width: 75px; font-size: 10px; }
+  body[data-page="dashboard"] .top-actions { gap: 3px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body[data-page="dashboard"] .diamond-action { animation: none !important; transition: none !important; }
+}
+
+/* INSTA_DASHBOARD_PALETTE_2026 — Premium Violet */
+
+body[data-page="dashboard"] {
+    --dash-ink: #29243F;
+    --dash-muted: #777389;
+    --dash-line: #E8E5F0;
+    --dash-bg: #F6F5FB;
+    --dash-surface: #FFFFFF;
+
+    background:
+        radial-gradient(ellipse at 50% 35%, rgba(167,139,250,.13), transparent 48%),
+        var(--bg);
+}
+
+html[data-theme="dark"] body[data-page="dashboard"] {
+    --dash-ink: #F5F3FF;
+    --dash-muted: #A5A1B8;
+    --dash-line: #2D2A3D;
+    --dash-bg: #0D0D14;
+    --dash-surface: #151520;
+
+    background:
+        radial-gradient(ellipse at 50% 35%, rgba(118,87,232,.17), transparent 52%),
+        var(--bg);
+}
+
+/* Four premium action diamonds */
+body[data-page="dashboard"] .diamond-action {
+    color: #29243F;
+    filter: drop-shadow(0 10px 17px rgba(65,45,120,.13));
+}
+
+body[data-page="dashboard"] .diamond-action::before {
+    border: 1px solid rgba(255,255,255,.72);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.45);
+}
+
+body[data-page="dashboard"] .diamond-reels {
+    --diamond-fill: linear-gradient(145deg, #F0EAFE, #DCD0FF 58%, #C7B5FF);
+}
+
+body[data-page="dashboard"] .diamond-profile {
+    --diamond-fill: linear-gradient(145deg, #EAF3FF, #CFE1FF 58%, #B4CCFA);
+}
+
+body[data-page="dashboard"] .diamond-analytics {
+    --diamond-fill: linear-gradient(145deg, #FFF2E8, #F8D9C8 58%, #F0C2B2);
+}
+
+body[data-page="dashboard"] .diamond-history {
+    --diamond-fill: linear-gradient(145deg, #E8F7F3, #C9EDE3 58%, #AEE1D5);
+}
+
+body[data-page="dashboard"] .diamond-action:hover {
+    filter: drop-shadow(0 14px 22px rgba(88,60,155,.23));
+}
+
+/* Dark theme diamonds */
+html[data-theme="dark"] body[data-page="dashboard"] .diamond-action {
+    color: #F5F3FF;
+}
+
+html[data-theme="dark"] body[data-page="dashboard"] .diamond-reels {
+    --diamond-fill: linear-gradient(145deg, #35264F, #48336B 58%, #60458C);
+}
+
+html[data-theme="dark"] body[data-page="dashboard"] .diamond-profile {
+    --diamond-fill: linear-gradient(145deg, #20334B, #2B496B 58%, #3B638B);
+}
+
+html[data-theme="dark"] body[data-page="dashboard"] .diamond-analytics {
+    --diamond-fill: linear-gradient(145deg, #493044, #67405D 58%, #895374);
+}
+
+html[data-theme="dark"] body[data-page="dashboard"] .diamond-history {
+    --diamond-fill: linear-gradient(145deg, #1E3E3B, #285B55 58%, #388075);
+}
+
+html[data-theme="dark"] body[data-page="dashboard"] .diamond-action::before {
+    border-color: rgba(255,255,255,.13);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.09);
+}
+
+body[data-page="dashboard"] .profile-summary {
+    background: var(--surface);
+    border-color: var(--line);
+}
+

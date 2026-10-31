@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="uz" data-theme="light">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#f4f2eb"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="Insta AI Studio"><link rel="manifest" href="/manifest.webmanifest"><link rel="apple-touch-icon" href="/static/icon-192.png">
+  <title>Dashboard · Insta AI Studio</title>
+  <link rel="icon" type="image/svg+xml" href="/static/brand.svg">
+  
+  <link rel="stylesheet" href="/static/style.css?v=20261031.3">
+  <link rel="stylesheet" href="/static/dashboard.css?v=20261031.2">
+<style id="no-sidebar-override">
+.sidebar, #sidebar {
+    display: none !important;
+}
+.main-area {
+    margin-left: 0 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+}
+.mobile-menu, #mobileMenu {
+    display: none !important;
+}
+</style>
+  <link rel="stylesheet" href="/static/mobile-final.css?v=20261101.1">
+</head>
+<body data-page="dashboard">
+<div class="app-shell">
+  
+
+  <main class="main-area">
+    <header class="topbar">
+      <div class="topbar-left"><button class="icon-button mobile-menu" id="mobileMenu" aria-label="Menu">☰</button><div><div class="eyebrow">INSTA AI STUDIO <span>/</span> <span data-i18n="personal">SHAXSIY</span></div><h1 data-i18n="dashboard">Dashboard</h1></div></div>
+      <div class="top-actions">
+        <button class="button button-status" id="openSystemStatus" type="button" title="Tizim holatini tekshirish" aria-label="Tizim holatini tekshirish"><span class="status-live-dot"></span><span data-i18n="system_status_short">Tizim holati</span></button>
+        <div class="language-switch" title="Language"><button data-lang="uz" class="lang-btn active">UZ</button><button data-lang="ru" class="lang-btn">RU</button><button data-lang="en" class="lang-btn">EN</button></div>
+        <button class="icon-button theme-toggle" id="themeToggle" title="Light / Dark">◐</button>
+        <div class="top-avatar">K</div>
+      </div>
+    </header>
+
+    <section class="page-content">
+      
+      <div class="welcome-row"><div><div class="welcome-kicker" data-i18n="workspace_status">SHAXSIY KONTENT MARKAZI</div><h2 data-i18n="welcome_title">Kontentingni bir joydan boshqar.</h2><p data-i18n="welcome_sub">Reels tayyorla, AI yordamidan foydalan va natijalarni kuzat.</p></div></div>
+      <nav class="dashboard-actions" aria-label="Asosiy bo‘limlar">
+        <a class="diamond-action diamond-reels" href="/reels"><span data-i18n="dash_reels">Reels joylash</span></a>
+        <a class="diamond-action diamond-profile" href="/profile"><span data-i18n="dash_profile">Instagram profil</span></a>
+        <a class="diamond-action diamond-analytics" href="/analytics"><span data-i18n="dash_stats">Statistika</span></a>
+        <a class="diamond-action diamond-history" href="/history"><span data-i18n="dash_history">Kontent tarixi</span></a>
+      </nav>
+      <div class="section-heading profile-heading"><div><span class="section-kicker" data-i18n="account">ACCOUNT</span><h3 data-i18n="instagram_profile">Instagram profiling</h3></div><a href="/profile" class="text-link"><span data-i18n="view_profile">Profilni ko‘rish</span> ↗</a></div>
+      <div class="profile-summary" id="dashboardProfile"><div class="profile-placeholder">◎</div><div><strong data-i18n="not_connected">Instagram tokeni tekshirilmoqda</strong><p data-i18n="env_connection_info">Instagram .env faylidagi token orqali boshqariladi.</p></div></div>
+      
+    </section>
+    <footer class="site-footer"><span>by khayitboyev</span><i>•</i><span>Insta AI Studio v1.1.0</span></footer>
+  </main>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<div class="modal-backdrop" id="systemModal" hidden>
+  <section class="system-modal" role="dialog" aria-modal="true" aria-labelledby="systemModalTitle">
+    <div class="system-modal-head"><div><span class="section-kicker">INSTA AI STUDIO</span><h2 id="systemModalTitle" data-i18n="system_status">Tizim holati</h2></div><button class="icon-button" id="closeSystemStatus" aria-label="Close">×</button></div>
+    <p class="system-modal-sub" data-i18n="system_status_hint">Ulanishlar avtomatik tekshiriladi. Instagram ma’lumotlari .env dan olinadi.</p>
+    <div class="system-check-list" id="systemCheckList"><div class="empty-state">Tekshirilmoqda…</div></div>
+    <div class="system-modal-foot"><span id="systemCheckedAt"></span><button class="button button-primary" id="refreshStatus" type="button">↻ <span data-i18n="refresh">Yangilash</span></button></div>
+  </section>
+</div>
+<script src="/api-config.js"></script><script src="/static/app.js?v=1.2.0"></script>
+</body></html>
+
+
+
+

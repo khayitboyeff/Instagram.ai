@@ -1,0 +1,21 @@
+Insta AI Studio — tozalangan loyiha
+
+Nimalar tozalandi:
+- .venv, node_modules, __pycache__, .git va zaxira nusxalar chiqarib tashlandi.
+- Maxfiy backend/.env va storage/token.key ZIP ichiga kiritilmadi.
+- Kerakli source kod, frontend va backend fayllari saqlandi.
+- Gemini cover javob formati image/jpeg ga o‘zgartirildi.
+- Cover fayl kengaytmasi .jpg va API Content-Type image/jpeg ga moslandi.
+- Reels joylashda share_to_feed checkbox mavjud va backendga yuboriladi.
+
+Ishga tushirishdan oldin:
+1. backend/.env.example faylidan backend/.env nusxa oling.
+2. O‘zingizning API kalitlaringiz va Instagram sozlamalaringizni .env ga kiriting.
+3. backend/storage/token.key yangi kalit sifatida qayta yaratilishi kerak (ilova buni yaratishi mumkin).
+4. Backend dependencies: pip install -r backend/requirements.txt
+5. Frontend dependencies kerak bo‘lsa: npm install (frontend papkasida).
+
+Eslatma:
+- ZIP ichida maxfiy .env va shifrlash kaliti yo‘q. Bu xavfsizlik uchun ataylab qilindi.
+- Mavjud database fayli ZIP tarkibida bo‘lmagan; agar foydalanuvchi ma’lumotlarini ko‘chirish kerak bo‘lsa, eski storage/database faylini alohida saqlang.
+- Instagram profil lentasida ko‘rinish share_to_feed=true bo‘lganda so‘raladi; yakuniy natija Instagram akkaunt turi, API ruxsatlari va Meta platformasi qoidalariga bog‘liq.

@@ -1,0 +1,632 @@
+﻿/* ==================================================
+   INSTA AI STUDIO — GRAPHITE & SAGE
+   FINAL DESIGN SYSTEM
+================================================== */
+
+:root {
+    --bg: #F1F2EE !important;
+    --surface: #FFFFFF !important;
+    --surface-2: #F7F8F5 !important;
+    --surface-3: #ECEEE8 !important;
+
+    --text: #282D28 !important;
+    --text-soft: #555D55 !important;
+    --muted: #858D84 !important;
+
+    --line: #E2E6DF !important;
+    --line-strong: #D3D9D0 !important;
+
+    --accent: #687B65 !important;
+    --accent-dark: #465B45 !important;
+    --accent-soft: #EBF0E9 !important;
+
+    --clay: #687B65 !important;
+    --clay-soft: #EBF0E9 !important;
+
+    --gold: #687B65 !important;
+    --gold-soft: #EBF0E9 !important;
+
+    --shadow: 0 2px 9px rgba(34, 42, 34, .025) !important;
+
+    color-scheme: light;
+}
+
+html[data-theme="dark"] {
+    --bg: #191E1A !important;
+    --surface: #242B25 !important;
+    --surface-2: #2B332C !important;
+    --surface-3: #343D34 !important;
+
+    --text: #ECEFE9 !important;
+    --text-soft: #C8D0C6 !important;
+    --muted: #98A398 !important;
+
+    --line: #3A453B !important;
+    --line-strong: #4B584A !important;
+
+    --accent: #A1B49A !important;
+    --accent-dark: #AFC2A7 !important;
+    --accent-soft: #303C31 !important;
+
+    --clay: #A1B49A !important;
+    --clay-soft: #303C31 !important;
+
+    --gold: #A1B49A !important;
+    --gold-soft: #303C31 !important;
+
+    --shadow: 0 2px 9px rgba(0, 0, 0, .10) !important;
+
+    color-scheme: dark;
+}
+
+/* =========================
+   1. GLOBAL BACKGROUNDS
+========================= */
+
+html,
+body,
+.app-shell,
+.main-area {
+    background: var(--bg) !important;
+    color: var(--text) !important;
+}
+
+body {
+    font-family: "DM Sans", "Manrope", Arial, sans-serif !important;
+}
+
+h1, h2, h3, h4,
+.panel-title h3,
+.section-heading h3 {
+    color: var(--text) !important;
+}
+
+/* =========================
+   2. REMOVE ROUNDED PANELS
+========================= */
+
+.panel,
+.metric-card,
+.status-card,
+.profile-summary,
+.hero-card,
+.reel-row,
+.history-panel,
+.drafts-history,
+.connection-mini,
+.system-modal,
+.login-card,
+.cover-preview,
+.drop-zone {
+    border-radius: 4px !important;
+    box-shadow: none !important;
+}
+
+.panel,
+.metric-card,
+.status-card,
+.profile-summary,
+.reel-row,
+.history-panel,
+.drafts-history,
+.system-modal,
+.login-card {
+    border: 1px solid var(--line) !important;
+}
+
+/* =========================
+   3. SIDEBAR
+========================= */
+
+.sidebar {
+    background: var(--surface) !important;
+    border-right: 1px solid var(--line) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.brand-mark {
+    background: var(--accent-dark) !important;
+    color: #FFFFFF !important;
+    border-radius: 3px !important;
+    box-shadow: none !important;
+}
+
+.nav-link {
+    border-radius: 3px !important;
+}
+
+.nav-link.active {
+    color: var(--accent-dark) !important;
+    background: var(--accent-soft) !important;
+    border-left: 3px solid var(--accent-dark);
+    font-weight: 800 !important;
+}
+
+.nav-link:hover {
+    background: var(--surface-2) !important;
+}
+
+.nav-icon svg {
+    stroke-width: 1.8;
+}
+
+/* =========================
+   4. TOPBAR
+========================= */
+
+.topbar {
+    min-height: 78px;
+    background: var(--surface) !important;
+    border: 0 !important;
+    border-bottom: 1px solid var(--line) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+}
+
+.eyebrow {
+    color: var(--muted) !important;
+}
+
+.topbar h1 {
+    color: var(--text) !important;
+    font-size: 19px !important;
+    letter-spacing: -.6px;
+}
+
+.top-avatar {
+    background: var(--accent-soft) !important;
+    color: var(--accent-dark) !important;
+    border: 1px solid var(--line) !important;
+    box-shadow: none !important;
+}
+
+/* =========================
+   5. BUTTONS
+========================= */
+
+.button,
+.icon-button,
+.lang-btn {
+    border-radius: 3px !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+.button {
+    min-height: 40px;
+    font-weight: 700;
+}
+
+.button-primary {
+    background: var(--accent-dark) !important;
+    border: 1px solid var(--accent-dark) !important;
+    color: #FFFFFF !important;
+}
+
+.button-primary:hover {
+    background: #384D38 !important;
+    border-color: #384D38 !important;
+}
+
+.button-dark {
+    background: #303A32 !important;
+    border-color: #303A32 !important;
+    color: #FFFFFF !important;
+}
+
+.button-outline,
+.button-quiet,
+.button-status,
+.icon-button {
+    color: var(--text-soft) !important;
+    background: var(--surface) !important;
+    border: 1px solid var(--line-strong) !important;
+}
+
+.button:hover,
+.icon-button:hover {
+    background: var(--surface-2) !important;
+}
+
+.button-primary:hover,
+.button-dark:hover {
+    color: #FFFFFF !important;
+}
+
+/* =========================
+   6. LANGUAGE SWITCH
+========================= */
+
+.language-switch {
+    border-radius: 3px !important;
+    background: var(--surface-2) !important;
+    border: 1px solid var(--line) !important;
+}
+
+.lang-btn {
+    border-radius: 2px !important;
+}
+
+.lang-btn.active {
+    background: var(--surface) !important;
+    color: var(--accent-dark) !important;
+}
+
+/* =========================
+   7. DASHBOARD HERO
+========================= */
+
+.hero-card {
+    background: #354438 !important;
+    border: 0 !important;
+    overflow: hidden;
+}
+
+.hero-art {
+    background: #405343 !important;
+}
+
+.hero-orbit {
+    border-color: rgba(255,255,255,.11) !important;
+}
+
+.hero-phone {
+    border-radius: 7px !important;
+    box-shadow: none !important;
+}
+
+.phone-image {
+    border-radius: 3px !important;
+    background: #71836B !important;
+}
+
+.hero-copy h2 {
+    color: #F6F7F1 !important;
+}
+
+.hero-copy p {
+    color: #C9D2C7 !important;
+}
+
+.hero-copy .text-link {
+    color: #C5D4BD !important;
+}
+
+.hero-spark {
+    color: #CAD4C0 !important;
+}
+
+.pill {
+    border-radius: 3px !important;
+}
+
+.pill-warm {
+    color: #E4EBDD !important;
+    background: rgba(255,255,255,.10) !important;
+}
+
+.pill-muted {
+    color: var(--muted) !important;
+    background: var(--surface-3) !important;
+}
+
+/* =========================
+   8. INPUTS AND TEXTAREAS
+========================= */
+
+input,
+textarea,
+select {
+    color: var(--text) !important;
+    background: var(--surface-2) !important;
+    border: 1px solid var(--line-strong) !important;
+    border-radius: 3px !important;
+    box-shadow: none !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--accent) !important;
+    box-shadow: inset 0 0 0 1px var(--accent) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--muted) !important;
+}
+
+/* =========================
+   9. REELS STUDIO
+========================= */
+
+.drop-zone {
+    background: var(--surface-2) !important;
+    border: 1px dashed #AEB9AA !important;
+    border-radius: 4px !important;
+}
+
+.drop-zone:hover,
+.drop-zone.dragover {
+    background: var(--accent-soft) !important;
+    border-color: var(--accent) !important;
+}
+
+.upload-symbol {
+    color: var(--accent-dark) !important;
+    background: var(--accent-soft) !important;
+    border-radius: 3px !important;
+}
+
+.panel-icon,
+.status-icon {
+    background: var(--accent-soft) !important;
+    color: var(--accent-dark) !important;
+    border-radius: 3px !important;
+}
+
+.toggle-row {
+    border-color: var(--line) !important;
+}
+
+.toggle-row input {
+    accent-color: var(--accent-dark) !important;
+}
+
+.cover-preview {
+    background: var(--surface-2) !important;
+    border: 1px solid var(--line) !important;
+    border-radius: 4px !important;
+}
+
+.profile-warning {
+    color: var(--text-soft) !important;
+    background: var(--accent-soft) !important;
+    border: 1px solid var(--line) !important;
+    border-radius: 4px !important;
+}
+
+/* =========================
+   10. ANALYTICS
+========================= */
+
+.metric-card {
+    background: var(--surface) !important;
+    border: 1px solid var(--line) !important;
+    border-radius: 4px !important;
+}
+
+.metric-value {
+    color: var(--text) !important;
+    font-weight: 800;
+}
+
+.metric-label,
+.metric-note {
+    color: var(--muted) !important;
+}
+
+/* =========================
+   11. HISTORY
+========================= */
+
+.history-header {
+    border-bottom: 1px solid var(--line) !important;
+}
+
+.history-item {
+    border-color: var(--line) !important;
+}
+
+.history-mark {
+    color: var(--accent-dark) !important;
+    background: var(--accent-soft) !important;
+    border-radius: 3px !important;
+}
+
+.draft-line {
+    border-color: var(--line) !important;
+}
+
+/* =========================
+   12. STATUS AND MODALS
+========================= */
+
+.status-pulse,
+.status-live-dot {
+    box-shadow: none !important;
+}
+
+.system-modal {
+    color: var(--text) !important;
+    background: var(--surface) !important;
+    border: 1px solid var(--line) !important;
+    border-radius: 4px !important;
+    box-shadow: 0 15px 45px rgba(0,0,0,.12) !important;
+}
+
+.system-check-icon {
+    color: var(--accent-dark) !important;
+    background: var(--accent-soft) !important;
+    border-radius: 3px !important;
+}
+
+.system-state.is-ok {
+    color: var(--success) !important;
+}
+
+.system-state.is-bad {
+    color: var(--danger) !important;
+}
+
+/* =========================
+   13. LOGIN
+========================= */
+
+.login-body {
+    background: var(--bg) !important;
+}
+
+.login-card {
+    border-radius: 4px !important;
+    box-shadow: none !important;
+}
+
+.login-card h1 {
+    color: var(--text) !important;
+}
+
+.login-brand .brand-mark {
+    border-radius: 3px !important;
+}
+
+/* Keep avatar circular */
+.profile-big img,
+.profile-big .avatar-fallback,
+.avatar,
+.top-avatar,
+.profile-placeholder {
+    border-radius: 50% !important;
+}
+
+/* =========================
+   14. FOOTER
+========================= */
+
+.site-footer {
+    color: var(--muted) !important;
+    border-color: var(--line) !important;
+}
+
+.site-footer i {
+    color: var(--accent) !important;
+}
+
+/* =========================
+   15. DARK MODE
+========================= */
+
+html[data-theme="dark"] body,
+html[data-theme="dark"] .app-shell,
+html[data-theme="dark"] .main-area {
+    background: var(--bg) !important;
+    color: var(--text) !important;
+}
+
+html[data-theme="dark"] .hero-card {
+    background: #303D32 !important;
+}
+
+html[data-theme="dark"] .hero-art {
+    background: #394A3B !important;
+}
+
+html[data-theme="dark"] .hero-copy h2 {
+    color: #F3F4ED !important;
+}
+
+html[data-theme="dark"] .hero-copy p {
+    color: #CBD4C7 !important;
+}
+
+html[data-theme="dark"] .sidebar,
+html[data-theme="dark"] .topbar,
+html[data-theme="dark"] .panel,
+html[data-theme="dark"] .metric-card,
+html[data-theme="dark"] .profile-summary,
+html[data-theme="dark"] .reel-row,
+html[data-theme="dark"] .system-modal,
+html[data-theme="dark"] .login-card {
+    background: var(--surface) !important;
+    border-color: var(--line) !important;
+}
+
+html[data-theme="dark"] input,
+html[data-theme="dark"] textarea,
+html[data-theme="dark"] select {
+    background: var(--surface-2) !important;
+    color: var(--text) !important;
+}
+
+html[data-theme="dark"] .nav-link.active {
+    background: var(--accent-soft) !important;
+    color: var(--accent) !important;
+    border-left-color: var(--accent);
+}
+
+html[data-theme="dark"] .button-primary {
+    background: #657C60 !important;
+    border-color: #657C60 !important;
+    color: #FFFFFF !important;
+}
+
+html[data-theme="dark"] .drop-zone {
+    background: var(--surface-2) !important;
+    border-color: var(--line-strong) !important;
+}
+
+/* =========================
+   16. RESPONSIVE
+========================= */
+
+@media (max-width: 760px) {
+    .sidebar {
+        border-radius: 0 !important;
+        background: var(--surface) !important;
+    }
+
+    .main-nav .nav-link {
+        border-radius: 3px !important;
+    }
+
+    .page-content {
+        padding-bottom: calc(90px + env(safe-area-inset-bottom));
+    }
+
+    .panel,
+    .metric-card,
+    .profile-summary,
+    .reel-row {
+        border-radius: 4px !important;
+    }
+
+    .system-modal {
+        border-radius: 4px 4px 0 0 !important;
+    }
+
+    .hero-card {
+        border-radius: 4px !important;
+    }
+}
+
+/* REMOVE DECORATIVE LABEL SHAPES */
+
+.pill,
+.pill-warm,
+.pill-muted {
+    display: inline !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    min-height: 0 !important;
+    color: var(--muted) !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    letter-spacing: 1.1px !important;
+}
+
+.section-kicker,
+.welcome-kicker {
+    display: block;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
